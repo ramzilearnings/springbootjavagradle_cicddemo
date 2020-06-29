@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo pre-build step 
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - gradle clean test
+
+  post_build:
+    commands:
+      - echo Build complete on `date`
+      - gradle clean build
+    
+
+
+artifacts:
+  files:
+    - build/libs/springbootjavagradle_demo_gh-0.0.1-SNAPSHOT.jar
